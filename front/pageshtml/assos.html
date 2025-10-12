@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/assos.css">
+    <link rel="icon" type="image/svg" sizes="32x32" href="../pictos_logos/favicon.svg">
+    <link rel="stylesheet" href="../css/loading-bar.css">
+    <script src="../scriptsjs/assos.js" defer></script>
+    <title>assos admin</title>
+</head>
+
+<body>
+    <header>
+        <div id="logoAdaction"><a href="index.html"><img src="../pictos_logos/ADACTION Blanc.svg"></a></div>
+    </header>
+
+    <main>
+        <div class="container">
+
+            <div class="title">
+                <button id="btn-return"><a href="#"><img src="../pictos_logos/house.svg"></a></button>
+                <h1 id="page-title">Bienvenue sur le panneau association</h1>
+            </div>
+
+            <table id="collecte-table" border="1">
+                <thead>
+                    <tr>
+                        <th id="id-value">ID</th>
+                        <th id="username-value">Nom d'utilisateur</th>
+                        <th id="date-value">Points</th>
+                        <th id="location-value">Location</th>
+                        <th id="collects-value">Email</th>
+                        <th id="action-value">Action</th>
+                    </tr>
+                </thead>
+                <tbody id="collecte-rows">
+                </tbody>
+        </div>
+
+        <div id="filter">
+            <button id="btn-volunteer">Voir tous les bénévoles inscrits</button>
+
+            <select id="location-filter">
+                <option value="none" selected disabled hidden>Choisir une ville</option>
+            </select>
+        </div>
+
+    </main>
+
+    <footer>&copy; 2025 ADACTION — Tous droits réservés</footer>
+
+</body>
+
+</html>

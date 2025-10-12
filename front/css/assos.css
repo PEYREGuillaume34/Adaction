@@ -1,0 +1,250 @@
+/* ============================
+   ASSOS PAGE — Mobile First
+============================ */
+
+/* ===== BASE ===== */
+body {
+  font-family: "Poppins", sans-serif;
+  background: #f4f8fb;
+  margin: 0;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  color: #111827;
+  background-image: url("../photos/vecteezy_texture-wrinkled-plastic-bag-background_14841118\ \(1\).jpg");
+  background-size: cover; 
+}
+
+main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 100px;  /* espace pour le header */
+  padding-bottom: 80px; /* espace pour le footer */
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #007bff;
+  color: #fff;
+  padding: 15px 0;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+}
+
+#logoAdaction{
+  width: 250px;
+  height: auto;
+  margin: auto;
+}
+
+/* ===== CONTAINER ===== */
+.container {
+  background: #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  padding: 20px;
+  width: 100%;
+  max-width: 900px;
+}
+
+/* ===== TITRE ===== */
+
+.title {
+  display: flex;
+  margin-bottom: 1.5rem;
+  justify-content: center;
+  gap: 15px;
+}
+
+h1 {
+    font-size: auto;
+    color: var(--color-text-dark);
+}
+
+#filter{
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+#btn-return {
+  border: 0;
+  border-radius: 12px;
+  font-size: 12px;
+  background: none;   /* Supprime le fond gris du bouton */
+  padding: 0;  
+  cursor: pointer;
+
+}
+
+#btn-volunteer {
+  background-color: #00b894;
+  border: 0;
+  color: white;
+  padding: 10px 35px;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(0, 184, 148, 0.18);
+  transition: transform 0.2s;
+}
+
+#location-filter{
+  background-color: #00b894;
+  border: 0;
+  color: white;
+  padding: 10px 35px;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(0, 184, 148, 0.18);
+  transition: transform 0.2s;
+
+}
+
+/* ===== NOMBRE DE COLLECTES ===== */
+#rows-count {
+  text-align: center;
+  font-weight: 500;
+  color: #0072ff;
+  background: rgba(0, 114, 255, 0.08);
+  border-radius: 10px;
+  padding: 8px 12px;
+  display: inline-block;
+  margin: 0 auto 20px auto;
+}
+
+/* ===== TABLEAU ===== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border: none;
+  font-size: 0.9rem;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* En-tête */
+thead {
+  background: linear-gradient(135deg, #00c6ff, #0072ff);
+  color: #fff;
+}
+
+th {
+  text-align: left;
+  padding: 10px;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+/* Corps du tableau */
+tbody tr:nth-child(even) {
+  background: #f9fcff;
+}
+
+tbody tr:hover {
+  background: rgba(0, 170, 255, 0.1);
+}
+
+td {
+  padding: 10px;
+  color: #333;
+  border-bottom: 1px solid #e5e7eb;
+  word-break: break-word;
+}
+
+#collecte-table {
+  margin-top: 1.3rem;
+}
+
+/* ===== RESPONSIVE MOBILE ===== */
+@media (max-width: 700px) {
+
+  table,
+  thead,
+  tbody,
+  th,
+  td,
+  tr {
+    display: block;
+  }
+
+  thead {
+    display: none;
+  }
+
+  tbody tr {
+    margin-bottom: 12px;
+    border-radius: 12px;
+    background: #ffffff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    padding: 10px;
+  }
+
+  td {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 10px;
+    border-bottom: none;
+  }
+
+  td::before {
+    content: attr(data-label);
+    font-weight: 600;
+    color: #0072ff;
+  }
+}
+
+/* ===== TABLET (≥900px) ===== */
+@media (min-width: 900px) {
+
+
+  .container {
+    padding: 28px 36px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  }
+
+  .title h1 {
+    font-size: 1.8rem;
+  }
+}
+
+.remove-btn {
+  display: flex;;
+  height: 30px;
+  width: 30px;
+  border-radius: 10px;
+  background-color: rgb(221, 3, 3);
+  color: white;
+  font-weight: bold;
+  border:none;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #007bff;
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  box-shadow: 0 -3px 8px rgba(0, 0, 0, 0.1);
+}

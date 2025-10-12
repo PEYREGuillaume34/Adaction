@@ -1,0 +1,168 @@
+/* ============================
+   🌱 STYLES DE BASE (mobile first)
+============================ */
+body {
+  font-family: "Poppins", sans-serif;
+  /* background: #f4f8fb; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+  background-image: url("../photos/CityClean.png")
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #007bff;
+  color: #fff;
+  padding: 15px 0;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+}
+
+
+
+#logoAdaction{
+  width: 250px;
+  height: auto;
+  margin: auto;
+  
+}
+
+
+.container {
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  padding: 24px;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+}
+
+
+/* ============================
+   FORMULAIRES ET TEXTES
+============================ */
+
+h1 {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    color: var(--color-text-dark);
+}
+
+form {
+  margin-top: 12px;
+}
+
+form p {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #555;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+
+/* ============================
+   BOUTONS
+============================ */
+button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #00c6ff, #0072ff);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0, 114, 255, 0.3);
+}
+
+/* ============================
+   LOGOS D'ASSOCIATIONS
+============================ */
+#logosAsso {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 15px;
+}
+
+#logosAsso img {
+  width: 50px;
+  height: auto;
+  transition: transform 0.25s ease;
+}
+
+#logosAsso img:hover {
+  transform: scale(1.1);
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #007bff;
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  box-shadow: 0 -3px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* ============================
+   🖥️ TABLETTES (≥ 600px)
+============================ */
+@media (min-width: 600px) {
+  .container {
+    padding: 32px;
+  }
+
+  .title h1 {
+    font-size: 2rem;
+  }
+
+  #logosAsso img {
+    width: 80px;
+  }
+}
+
+/* ============================
+   💻 DESKTOP (≥ 900px)
+============================ */
+@media (min-width: 900px) {
+  /* body {
+    background: linear-gradient(180deg, #eaf6ff 0%, #f4f8fb 100%);
+  } */
+
+  .container {
+    max-width: 450px;
+    padding: 40px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  .title h1 {
+    font-size: 2.2rem;
+  }
+
+  button {
+    font-size: 1.05rem;
+    padding: 14px 20px;
+  }
+
+}
+

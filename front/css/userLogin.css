@@ -1,0 +1,154 @@
+/* --- Style global --- */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", Arial, sans-serif;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-image: url("../photos/Plage.png");
+  background-position: right bottom; /* place l’image en bas à droite */
+background-size: auto; /* réduit sa taille */
+}
+
+
+/* Conteneur centré pour éviter les effets du header/footer */
+.main-content {
+  flex: 1;
+  display: flex;
+  align-items: center;    /* Centre verticalement */
+  justify-content: center; /* Centre horizontalement */
+  padding: 100px 20px;    /* espace pour header/footer */
+}
+
+/* --- Bannière supérieure --- */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #007bff;
+  color: #fff;
+  padding: 15px 0;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+}
+
+
+
+#logoAdaction{
+  width: 250px;
+  height: auto;
+  margin: auto;
+  
+}
+
+/* --- Formulaire principal --- */
+form {
+  background: #fff;
+  padding: 40px 50px;
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  width: 400px;
+  max-width: 90%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* --- Titre principal --- */
+h1 {
+  text-align: center;
+  color: #000;
+  font-weight: 700;
+  margin-bottom: 30px;
+  letter-spacing: 1px;
+}
+
+/* --- Labels --- */
+label {
+  font-weight: 600;
+  color: #555;
+  margin-bottom: 8px;
+}
+
+/* --- Champs de saisie --- */
+input[type="text"],
+input[type="password"] {
+  padding: 12px;
+  border: 1.5px solid #ccc;
+  border-radius: 10px;
+  outline: none;
+  margin-bottom: 20px;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+}
+
+input:focus {
+  border-color: #007bff;
+}
+
+/* --- Bouton --- */
+button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 12px;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+}
+
+/* --- Message d’erreur --- */
+#message {
+  text-align: center;
+  margin-top: 15px;
+  font-weight: 500;
+}
+
+/* --- Pied de page --- */
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #007bff;
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  box-shadow: 0 -3px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* --- Version mobile --- */
+@media (max-width: 600px) {
+  form {
+    padding: 25px 30px;
+    width: 100%;
+    margin-top: 100px;
+  }
+
+  h1 {
+    font-size: 1.6em;
+  }
+
+  input,
+  button {
+    font-size: 15px;
+  }
+
+  header {
+    font-size: 18px;
+    padding: 12px 0;
+  }
+
+  footer {
+    font-size: 13px;
+    padding: 8px 0;
+  }
+}
