@@ -1,3 +1,6 @@
+import { API_URL } from './config.js';
+
+
 import { getUserInfos } from "./fetchs-iris.js";
 
 
@@ -63,7 +66,7 @@ async function sendToDatabase() {
 
 
   try {
-    const response = await fetch('http://localhost:3000/postCollects', {
+    const response = await fetch(`${API_URL}/postCollects`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -128,7 +131,7 @@ async function updateDatabase() {
 
 
   try {
-    const response = await fetch(`http://localhost:3000/collects/${collectIdLS}`, {
+    const response = await fetch(`${API_URL}/collects/${collectIdLS}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json'

@@ -1,3 +1,6 @@
+import { API_URL } from './config.js';
+
+
 // import d'outils pour lire l'utilisateur connecté et ses points actuels
 import { fetchUserPoints, userId } from './fetchs-iris.js';
 
@@ -14,7 +17,7 @@ const displayToday = async () => {
 
     try {
         // récupère toutes les collectes
-        const response = await fetch('http://localhost:3000/collects');
+        const response = await fetch(`${API_URL}/collects`);
         const data = await response.json();
         // voir a quoi ca ressemble pour appels ult.
         console.log("collecte:", data);
@@ -118,7 +121,7 @@ async function countUserPoints() {
 
     // ca part
     try {
-        const res = await fetch(`http://localhost:3000/volunteer/points/${userId}`, {
+        const res = await fetch(`${API_URL}/points/${userId}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'

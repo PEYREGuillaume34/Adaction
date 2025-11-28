@@ -1,3 +1,6 @@
+import { API_URL } from './config.js';
+
+
 import { getUserInfos, username } from "./fetchs-iris.js";
 
 

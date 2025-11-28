@@ -1,3 +1,7 @@
+import { API_URL } from './config.js';
+
+
+
 import { assoDropMenu, getAssolist } from "./fetchs-iris.js";
 
 
@@ -71,7 +75,7 @@ form.addEventListener("submit", async (e) => {
     }
 
     try {
-        const response = await fetch('http://localhost:3000/volunteer', {
+        const response = await fetch(`${API_URL}/volunteer`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

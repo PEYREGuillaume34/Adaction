@@ -1,3 +1,6 @@
+import { API_URL } from './config.js';
+
+
 const greenpeace = document.getElementById('greenpeace');
 const petitsdebrouillard = document.getElementById('petitsdebrouillard');
 const seashepherd = document.getElementById('seashepherd');

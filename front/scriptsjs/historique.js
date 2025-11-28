@@ -1,3 +1,6 @@
+import { API_URL } from './config.js';
+
+
 // outils pour recuperer les infos user, afficher l'historique, créer des balises
 import { getHistoInfo, userId, nouvelleBalise, nouvelleBalise2 } from "./fetchs-iris.js";
 
@@ -64,7 +67,7 @@ const printCard = async (index, data) => {
 
         // action de delete via route delete
         try {
-            const res = await fetch(`http://localhost:3000/collects/${collectId}`, {
+            const res = await fetch(`${API_URL}/collects/${collectId}`, {
                 method: 'DELETE',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ volunteer_id: userId })
