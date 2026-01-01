@@ -7,7 +7,11 @@ import bcrypt from "bcrypt";
 const { Pool } = pkg;
 dotenv.config();
 const app = express();
-app.use(cors());
+app.use(cors({
+    origin: process.env.FRONTEND_URL || '*',
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    allowedHeaders: ['Content-Type']
+}));
 //utilises et reconnais JSON
 app.use(express.json());
 
@@ -279,8 +283,9 @@ app.post("/login", async (req, res) => {
     }
 });
 
-app.listen(3000, () => {
-    // console.log("HELLO SERVER");
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
 })
 
 
