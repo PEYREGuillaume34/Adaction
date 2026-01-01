@@ -20,7 +20,7 @@ function nouvelleBalise2(type, id) {
 const getUserInfos = async () => {
     const userId = localStorage.getItem("id");
     if (!userId) return null;
-    const response = await fetch(`(${API_URL}/volunteer/profile/${userId}`);
+    const response = await fetch(`${API_URL}/volunteer/profile/${userId}`);
     return await response.json();
 };
 
