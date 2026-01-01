@@ -8,7 +8,7 @@ const { Pool } = pkg;
 dotenv.config();
 const app = express();
 app.use(cors({
-    origin: process.env.FRONTEND_URL || '*',
+    origin: '*',  // Temporaire pour debug
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     allowedHeaders: ['Content-Type']
 }));
@@ -122,7 +122,7 @@ app.put("/volunteer/points/:id", async (req, res) => {
             RETURNING collect_points
    )
    UPDATE volunteers
-   SET points = $4
+   SET points = points + $4
    FROM collecte
    WHERE volunteers.id = $3
    RETURNING volunteers.*`,
