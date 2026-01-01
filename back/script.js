@@ -192,8 +192,8 @@ app.post("/postCollects", async (req, res) => {
         return res.status(400).json({ error: "Champs manquants" });
     }
     try {
-        // Calculer les points (1 point par déchet collecté)
-        const collect_points = megot + canne + plastique + conserve + canette;
+        // Calculer les points avec pondération (même formule que le frontend)
+        const collect_points = (megot * 10) + (canne * 15) + (plastique * 30) + (conserve * 15) + (canette * 20);
         
         // Insérer la collecte avec les points calculés
         const result = await sql.query(
