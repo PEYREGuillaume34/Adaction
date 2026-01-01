@@ -52,7 +52,7 @@ app.get("/volunteer/:id", async (req, res) => {
 
 // Route pour créer un bénévole
 app.post("/volunteer", async (req, res) => {
-    const { username, password, points, association_id, location, email } = req.body;
+    const { username, password, association_id, location, email } = req.body;
     if (!username || !email || !location || !password) {
         return res.status(400).json({ error: "Champs manquants" });
     }
@@ -61,8 +61,8 @@ app.post("/volunteer", async (req, res) => {
         const hashedPassword = await bcrypt.hash(password, 10); // 10 = nombre de tours (valeur standard)
         const result = await sql.query(
             `INSERT INTO volunteers (username, password, points, association_id, location, email)
-             VALUES ($1, $2, $3, $4, $5, $6) RETURNING *`,
-            [username, hashedPassword, points, association_id, location, email]
+             VALUES ($1, $2, 0, $3, $4, $5) RETURNING *`,
+            [username, hashedPassword, association_id, location, email]
         );
         res.status(201).json(result.rows[0]);
     } catch (e) {
@@ -192,14 +192,25 @@ app.post("/postCollects", async (req, res) => {
         return res.status(400).json({ error: "Champs manquants" });
     }
     try {
+        // Calculer les points (1 point par déchet collecté)
+        const collect_points = megot + canne + plastique + conserve + canette;
+        
+        // Insérer la collecte avec les points calculés
         const result = await sql.query(
-            `INSERT INTO collects (location, megot, canne, plastique, conserve, canette, volunteer_id, created_at, updated_at, association_id)
-             VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING *`,
-            [location, megot, canne, plastique, conserve, canette, volunteer_id, created_at, updated_at, association_id]
-
+            `INSERT INTO collects (location, megot, canne, plastique, conserve, canette, volunteer_id, created_at, updated_at, association_id, collect_points)
+             VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING *`,
+            [location, megot, canne, plastique, conserve, canette, volunteer_id, created_at, updated_at, association_id, collect_points]
         );
+        
+        // Mettre à jour les points du bénévole
+        await sql.query(
+            `UPDATE volunteers SET points = COALESCE(points, 0) + $1 WHERE id = $2`,
+            [collect_points, volunteer_id]
+        );
+        
         res.status(201).json(result.rows[0]);
     } catch (e) {
+        console.error(e);
         res.status(500).json({ error: "impossible d'ajouter les dechets" });
     }
 });
